@@ -88,6 +88,41 @@ function closeProjectModal(e) {
     }
 }
 
+// --- 1-1. About Us Modal Logic ---
+function openAboutModal(e) {
+    if (e && e.preventDefault) e.preventDefault();
+    const modalBody = document.getElementById('modal-content-body');
+    modalBody.innerHTML = `
+        <div style="text-align: center; margin-bottom: 2rem;">
+            <div style="display: inline-block; width: 72px; height: 72px; border-radius: 50%; background: var(--accent-glow); border: 2px solid var(--accent); line-height: 68px; font-size: 2.2rem; margin-bottom: 1rem;">🏛️</div>
+            <span style="color: var(--accent); font-size: 0.85rem; font-weight: 700; letter-spacing: 1.5px; display: block;">SHINGU UNIVERSITY · DEPT. OF ARCHITECTURE</span>
+            <h2 style="font-family: var(--font-heading); font-size: 2.2rem; margin: 0.5rem 0 0.3rem 0; color: var(--text-primary);">신구대학교 건축학과 홍길동</h2>
+            <p style="color: var(--text-secondary); font-size: 0.95rem;">Hong Gil-dong | Architectural Designer & Researcher</p>
+        </div>
+
+        <div style="background: rgba(0,0,0,0.35); padding: 1.5rem; border-radius: var(--radius-sm); border: 1px solid var(--border); margin-bottom: 1.5rem; line-height: 1.8;">
+            <h4 style="color: var(--accent); margin-bottom: 0.6rem; font-size: 1.05rem;">👤 소개 (About Me)</h4>
+            <p style="color: var(--text-secondary);">
+                안녕하세요! <strong>신구대학교 건축학과 홍길동</strong>입니다.<br>
+                빛과 공허(Void), 그리고 도시의 물리적 연속성을 탐구하며, 단순한 형태적 미학을 넘어 사람과 커뮤니티가 호흡하는 장소성을 설계합니다.
+                Rhino, Grasshopper, Three.js 기반의 3D 공간 시뮬레이션 및 데이터 기반 친환경 건축 디자인을 추구합니다.
+            </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem; background: rgba(0,0,0,0.25); padding: 1.2rem; border-radius: var(--radius-sm); border: 1px solid var(--border);">
+            <div><strong>학교 및 학과:</strong> <span style="color: var(--text-secondary);">신구대학교 건축학과</span></div>
+            <div><strong>학생 이름:</strong> <span style="color: var(--accent); font-weight: bold;">홍길동 (Hong Gil-dong)</span></div>
+            <div><strong>관심 분야:</strong> <span style="color: var(--text-secondary);">공공건축, 도시재생, 친환경설계</span></div>
+            <div><strong>디지털 툴:</strong> <span style="color: var(--text-secondary);">Rhino, Grasshopper, Three.js, BIM</span></div>
+        </div>
+
+        <div style="text-align: center; margin-top: 1.5rem;">
+            <button onclick="closeProjectModal()" class="btn-primary" style="padding: 0.8rem 2.2rem; cursor: pointer; border: none; border-radius: var(--radius-sm); font-weight: 600;">확인 닫기</button>
+        </div>
+    `;
+    document.getElementById('project-modal').classList.add('show');
+}
+
 // --- 2. Filter Button Logic ---
 document.querySelectorAll('.filter-btn').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -475,7 +510,7 @@ const scenarioResponses = [
     },
     {
         keywords: ["연락처", "이메일", "인스타", "sns", "커피챗", "문의", "메일", "전화"],
-        answer: "김진우 학생의 작업에 관심을 가져주셔서 감사합니다! 📧 이메일: arch.jinwoo@example.ac.kr | 📸 인스타그램: @arch_jinwoo 로 연락 주시면 상세한 포트폴리오 질의응답이나 커피챗이 가능합니다."
+        answer: "신구대학교 건축학과 홍길동 학생의 작업에 관심을 가져주셔서 감사합니다! 📧 이메일: gildong.hong@shingu.ac.kr 로 연락 주시면 상세한 포트폴리오 질의응답이나 커피챗이 가능합니다."
     }
 ];
 
